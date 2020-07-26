@@ -32,7 +32,7 @@ Your account has been created. Please verify your Emailid by clicking the below 
 <tr>
 <td style="border-radius:100px" bgcolor="#4dacfe" align="center">
 
-<a href="http://localhost:3000/account_verify?id= <%= @user.id%>" style="font-size:14px;font-weight:600;color:#ffffff;text-decoration:none;border-radius:100px;padding:12px 40px;border:1px solid #4dacfe; display: inline-block" target="_blank">Verify now</a></td>
+<a href="<%= ENV['mail_url']%>/account_verify?id= <%= @user.id%>" style="font-size:14px;font-weight:600;color:#ffffff;text-decoration:none;border-radius:100px;padding:12px 40px;border:1px solid #4dacfe; display: inline-block" target="_blank">Verify now</a></td>
 </tr>
 </tbody>
 </table>

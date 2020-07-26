@@ -64,8 +64,8 @@ Rails.application.configure do
   # Generate digests for assets URLs  
   config.assets.digest = true
 
-  # # Default Mailer Link
-  # ENV['mail_url'] = "http://localhost:3000/"
+  ## Default Mailer Link
+  ENV['mail_url'] = "http://localhost:3000/"
 
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for gmail
