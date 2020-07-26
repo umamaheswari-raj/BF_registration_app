@@ -1,0 +1,88 @@
+<script src="https://use.fontawesome.com/99347ac47f.js"></script>
+<link rel="stylesheet" type="text/css" href="/assets/login_style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+<div class="container" style="width: 35%">
+  <div class="login row">
+    <div class="col-md-12">
+      <div class="logo">
+        <h2>ByteForza</h2>
+      </div>
+      
+      <h5 class="card-title text-center">Register</h5>
+      <%= form_with(model: user, local: true) do |form| %>
+        <div class="card-body">
+          <div class="row">
+              <div class="form-group">
+                <div class="field">
+                  <%#= form.label :email_id,  class: "control-label" %>
+                  <%= form.text_field :email_id, id: :email, class: "form-control", placeholder: "EmailId", :required => true %>
+                </div>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="form-group">
+                <div class="field">
+                  <%#= form.label :first_name, class: "control-label" %>
+                  <%= form.text_field :first_name, id: :first_name, class: "form-control", placeholder: "First Name", :required => true %>
+                </div>
+              </div>
+          </div>
+
+
+          <div class="row">
+              <div class="form-group">
+                <div class="field">
+                  <%#= form.label :city, class: "control-label" %>
+                  <%= form.text_field :city, id: :city, class: "form-control", placeholder: "City", :required => true %>
+                </div>
+            </div>
+          </div>
+
+          <%= form.hidden_field :password, value: "123456"  %>
+
+          <div class="form-group">
+              <%= form.submit "Save", class: "btn btn-success btn-lg btn-block text-uppercase" %>
+              <br>
+              <%= link_to "Back to Login", login_path, class: "btn btn-primary col btn-block text-uppercase" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+  body {
+    background: #007bff;
+    background: linear-gradient(to right, #0062E6, #33AEFF);
+  }
+  #alert {
+    background: white;
+    color: red;
+    font-size: 13px;
+  }
+</style>
+
+<script type="text/javascript">
+  $('#alert').show(0).delay(2000).hide(0);
+  $('#alert').hide(0).delay(2000).hide(0);
+
+  $("#email" ).change(function() {
+      var emailId = ($(this).val());
+      $.ajax({
+        type: "GET",
+        url: "/validate_email?email_id="+emailId,
+        data: {email: emailId},
+        success: function(response){
+          if (response && response.message=='ERROR') {
+            alert("This Email already taken");
+          }
+        }
+         
+      })
+  });
+
+</script>

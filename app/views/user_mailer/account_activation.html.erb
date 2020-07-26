@@ -1,0 +1,58 @@
+<table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td valign="top" align="center">
+<table style="width:100%!important" width="100%" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+</tr>
+</tbody>
+</table>
+<table style="background:#ffffff;padding:45px 70px;margin-top:15px;width:600px!important" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td style="padding-bottom:10px" valign="top" align="center">
+<div style="color:#333;font-size:1.28em;letter-spacing:-0.02em;font-weight:bold">
+Welcome to ByteForza</div>
+
+<div style="color:#999;font-size:1.24em;letter-spacing:-0.02em;max-width:370px;margin-top:15px">
+Hi <%= @user.first_name %><br>
+Your account has been created. Please verify your Emailid by clicking the below link:<br>
+</div>
+</td>
+</tr>
+<tr>
+<td style="padding-top:10px" align="center">
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td align="center">
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td style="border-radius:100px" bgcolor="#4dacfe" align="center">
+
+<a href="http://localhost:3000/account_verify?id= <%= @user.id%>" style="font-size:14px;font-weight:600;color:#ffffff;text-decoration:none;border-radius:100px;padding:12px 40px;border:1px solid #4dacfe; display: inline-block" target="_blank">Verify now</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="margin:20px 0 80px;width:600px!important" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td style="padding:20px 0;border-top:2px solid #d7d7d7;border-bottom:2px solid #d7d7d7" valign="center" align="center">
+<div style="font-size:1.07em;color:#999;letter-spacing:-0.02em">You received this email because you are now a registered user of ByteForza</div>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>

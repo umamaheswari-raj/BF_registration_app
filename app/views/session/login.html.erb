@@ -1,0 +1,49 @@
+<script src="https://use.fontawesome.com/99347ac47f.js"></script>
+<link rel="stylesheet" type="text/css" href="/assets/login_style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> 
+<div class="login-page">
+	<div class="container" style="width: 35%">
+		<div class="login row">
+			<div class="col-md-12">
+				<div class="logo">
+					<h2>ByteForza</h2>
+					<br>
+				</div>
+				<%= form_tag login_process_path do %>  
+					<div class="form-group">
+		  				<%= text_field_tag(:email,"", class: "form-control", id: "exampleInputEmail1", placeholder: "Email ID", required: "true" )%>
+		  			</div>
+		 			 <div class="form-group"> 
+		     			<%= password_field_tag :password ,"", class: "form-control",id: "exampleInputPassword1", placeholder: "Password", required: "true" %> 
+		 			 </div>
+		 			 <p id="alert"><%= alert %></p>
+		  				<%= submit_tag "Login",class: "btn btn-primary btn-lg btn-block" %>
+				<% end %>
+				<div class="signup_block">
+					<h6>Doesn't have an account? Click here..</h6>
+		    		<%= link_to 'Register', new_user_path, class: "btn btn-success col login-btn" %>
+		 		</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<style type="text/css">
+	body {
+	  background: #007bff;
+	  background: linear-gradient(to right, #0062E6, #33AEFF);
+	}
+	#alert {
+	  background: white;
+	  color: red;
+	  font-size: 13px;
+	}
+</style>
+
+<script type="text/javascript">
+	$('#alert').show(0).delay(2000).hide(0);
+	$('#alert').hide(0).delay(2000).hide(0);
+</script>
+
